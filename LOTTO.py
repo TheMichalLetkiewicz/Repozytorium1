@@ -14,7 +14,7 @@ print("Podaj lczbe w zakresie od 1 do 49.")
 
 twoje_liczby=[]
 while len(twoje_liczby) < 6:
-      skreslona_liczba = input("Udawaj ze skreslasz jakas liczbe (ale w rzeczywistosci wpisz: )")
+      skreslona_liczba = int(input("Podaj liczbe : "))
       if skreslona_liczba in twoje_liczby:
             print("Juz ja wybrales")
       elif skreslona_liczba < 1 or skreslona_liczba > 49:
