@@ -13,7 +13,7 @@ while len(zwycieskie_liczby) < 6:
 print("Podaj lczbe w zakresie od 1 do 49.")
 
 twoje_liczby=[]
-while len(twoje_liczby) < 6
+while len(twoje_liczby) < 6:
       skreslona_liczba = input("Udawaj ze skreslasz jakas liczbe (ale w rzeczywistosci wpisz: )")
       if skreslona_liczba in twoje_liczby:
             print("Juz ja wybrales")
@@ -26,5 +26,9 @@ while len(twoje_liczby) < 6
 
             
     
-Iles_wygral = set(zwycieskie_liczby) 
+Iles_wygral = set(twoje_liczby)&set(zwycieskie_liczby)
+Iles_trafil = len(Iles_wygral)
+print("Liczby wylosowane: " , zwycieskie_liczby)
+print("Liczby skreslone: " , twoje_liczby)
+print("Liczb trafionych: " , Iles_trafil)
     
