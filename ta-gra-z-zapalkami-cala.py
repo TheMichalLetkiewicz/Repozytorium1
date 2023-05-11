@@ -1,10 +1,12 @@
 import turtle
 import random
 window = turtle.Screen()
-B = 675
-I = 1
-X = - 135
-Y= 135
+B = 705
+
+X = - 136
+
+Y = 136
+Odstep = 235
 window.setup(B,B)
 window.title('Gra z zapałkami nie pamietam nazwy')
 window.bgcolor('green yellow')
@@ -14,9 +16,10 @@ xo.speed(0)
 
 
 
-tablica=[[None, None, I, None, None]
-            [None, I, I, I, None]
-               [I, I, I, I, I]]
+tablica=[[None, None, None, I, None, None, None]
+            [None, None, I, I, I, None, None]
+               [None, I, I, I, I, I, None]
+                  [I, I, I, I, I, I, I]]
 
 
 
