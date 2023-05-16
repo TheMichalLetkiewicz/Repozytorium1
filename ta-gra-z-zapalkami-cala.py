@@ -1,28 +1,27 @@
 import turtle
 import random
+import tkinter as tk
 window = turtle.Screen()
 
 B = 700
-
 X = - 135
-
 Y = 136
 
 ODSTĘP = 136
 
-window.setup(B,B)
+window.setup(700,700)
 window.title('Gra z zapałkami nie pamietam nazwy')
 window.bgcolor('green yellow')
 zolw = turtle.Turtle()
-
+turtle.speed(100)
 
 
 tablica = [
     [None, None, None, None, None, None, None],
     [None, None, None, 'I', None, None, None],
-    [None, None, 'I', 'I', 'I', None, None],
-    [None, 'I', 'I', 'I', 'I', 'I', None],
-    ['I', 'I', 'I', 'I', 'I', 'I', 'I'],
+     [None, None, 'I', 'I', 'I', None, None],
+      [None, 'I', 'I', 'I', 'I', 'I', None],
+       ['I', 'I', 'I', 'I', 'I', 'I', 'I'],
     [None, None, None, None, None, None, None],
     [None, None, None, None, None, None, None]
 ]
@@ -30,33 +29,23 @@ tablica = [
 
 
 
+row1 = tablica[0]
+row2 = tablica[1]
+row3 = tablica[2]
+row4 = tablica[3]
+row5 = tablica[4]
+row6 = tablica[5]
+row7 = tablica[6]
 
-
-
-
-
-
-
-
-zolw.width(1)
-zolw.speed(111000)
-square_size = window.window_width() / 7
-for i in range(0,7):
-    for j in range(0,7):
-        
-        zolw.penup()
-        zolw.goto(-window.window_width() / 2 + j * square_size,
-               window.window_height() / 2 - (i + 1) * square_size)
-        zolw.pendown()
-
-        
-        for k in range(4):
-            zolw.forward(square_size)
-            zolw.right(90)
-
-
-turtle.done()
-
-
+for i in range(0,6):
+    for j in range(0,6):
+        if tablica[i][j] != None:
+            print(i,j)
+            zolw.penup
+            zolw.goto(35+i*70,35+j*70)
+            zolw.pendown
+            zolw.pencolor("Black")
+            zolw.width(2)
+            
 
 
