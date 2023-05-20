@@ -36,7 +36,10 @@ row5 = tablica[4]
 row6 = tablica[5]
 row7 = tablica[6]
 
+win.register_shape('zapalka.gif')
 
-            
+sprite = turtle.Turtle()
+
+sprite.shape('zapalka.gif')
 
 
