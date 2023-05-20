@@ -1,6 +1,5 @@
 import turtle
 import random
-import tkinter as tk
 window = turtle.Screen()
 
 B = 700
@@ -37,15 +36,7 @@ row5 = tablica[4]
 row6 = tablica[5]
 row7 = tablica[6]
 
-for i in range(0,6):
-    for j in range(0,6):
-        if tablica[i][j] != None:
-            print(i,j)
-            zolw.penup
-            zolw.goto(35+i*70,35+j*70)
-            zolw.pendown
-            zolw.pencolor("Black")
-            zolw.width(2)
+
             
 
 
