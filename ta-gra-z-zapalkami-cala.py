@@ -42,8 +42,69 @@ row7 = tablica[6]
 
 
 # Funkcja obsługująca kliknięcie na obrazek
-def handle_click(x, y):
+def klikniecie(x, y):
     print("Kliknięto na obrazek w punkcie", x, y)
+    if -10.0 < x < 8.0 and 17.0 < y < 90.0:
+        tablica[1][3] = None
+        turtle.penup()
+        turtle.goto(-10.0, 90.0)
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
+        for _ in range(2):
+            turtle.forward(image_width)
+            turtle.right(90)
+            turtle.forward(image_height)
+            turtle.right(90)
+        turtle.end_fill()
+    elif -40.0 < x < -20.0 and -70 < y < 5.0:
+        tablica[2][2] = None
+        turtle.penup()
+        turtle.goto(-40.0, 5.0)
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
+        for _ in range(2):
+            turtle.forward(image_width)
+            turtle.right(90)
+            turtle.forward(image_height)
+            turtle.right(90)
+        turtle.end_fill()
+    elif -10.0 < x < 10.0 and -70 < y < 5.0:
+        tablica[2][3] = None
+        turtle.penup()
+        turtle.goto(-10.0, 5.0)
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
+        for _ in range(2):
+            turtle.forward(image_width)
+            turtle.right(90)
+            turtle.forward(image_height)
+            turtle.right(90)
+        turtle.end_fill()
+    elif 20.0 < x < 40.0 and -70 < y < 5.0:
+        tablica[2][4] = None
+        turtle.penup()
+        turtle.goto(20.0, 5.0)
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
+        for _ in range(2):
+            turtle.forward(image_width)
+            turtle.right(90)
+            turtle.forward(image_height)
+            turtle.right(90)
+        turtle.end_fill()
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,7 +140,7 @@ for row_index, row in enumerate(tablica):
             draw_image(image_x, image_y)
 
             # Dodanie obsługi kliknięcia na obrazek
-            turtle.onscreenclick(handle_click, 1)
+            turtle.onscreenclick(klikniecie, 1)
 
 # Rysowanie liczby w prawym górnym rogu
 def draw_number(number, x, y):
@@ -94,4 +155,3 @@ draw_number(3, 290, 210)
 
 # Uruchomienie pętli głównej turtle
 turtle.mainloop()
-
