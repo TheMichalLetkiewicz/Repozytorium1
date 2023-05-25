@@ -304,9 +304,9 @@ def draw_number(number, x, y):
     turtle.write(number, align="right", font=("Arial", 33, "normal"))
 
 # Umieszczenie liczb 1, 2, 3 w prawym górnym rogu
-draw_number(1, 290, 290)
-draw_number(2, 290, 250)
-draw_number(3, 290, 210)
+draw_number(1, -30, 245)
+draw_number(2, 15, 245)
+draw_number(3, 60, 245)
 
 # Uruchomienie pętli głównej turtle
 turtle.mainloop()
