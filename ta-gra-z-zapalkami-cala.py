@@ -318,23 +318,54 @@ def ruch_komputera():
     ile = random.randint(1, 3)
     g = random.randint(-1,1,2)
     if ile == 1:
+
         while tablica[kol][rzad] == None:
             rzad = random.randint(0, 6)
             kol = random.randint(0, 6)
         tablica[kol][rzad] = None
+        turtle.penup()
+        turtle.goto(-70.0+30.0*(rzad-1), 90.0-85*(kol-1))
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
     elif ile == 2:
         
         while tablica[kol][rzad] == None:
             rzad = random.randint(0, 6)
             kol = random.randint(0, 6)
         tablica[kol][rzad] = None
+        turtle.penup()
+        turtle.goto(-70.0+30.0*(rzad-1), 90.0-85*(kol-1))
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
         tablica[kol][rzad+g] = None
+        turtle.penup()
+        turtle.goto(-70.0+30.0*(rzad+g-1), 90.0-85*(kol-1))
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
     elif ile == 3:
-        for i in range(ile):
-            while tablica[kol][rzad] == None:
-                rzad = random.randint(0, 6)
-                kol = random.randint(0, 6)
-            tablica[kol][rzad] = None
-            tablica[kol][rzad+g] = None
-            tablica[kol][rzad+g+g] = None
+        
+        while tablica[kol][rzad] == None:
+            rzad = random.randint(0, 6)
+            kol = random.randint(0, 6)
+        tablica[kol][rzad] = None
+        turtle.penup()
+        turtle.goto(-70.0+30.0*(rzad-1), 90.0-85*(kol-1))
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")    
+        tablica[kol][rzad+g] = None
+        turtle.penup()
+        turtle.goto(-70.0+30.0*(rzad+g-1), 90.0-85*(kol-1))
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
+        tablica[kol][rzad+g+g] = None
+        turtle.penup()
+        turtle.goto(-70.0+30.0*(rzad+g+g-1), 90.0-85*(kol-1))
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.color("green yellow")
 
