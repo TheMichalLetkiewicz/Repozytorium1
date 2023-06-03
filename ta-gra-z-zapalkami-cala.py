@@ -1,7 +1,6 @@
 import turtle
 import random
 
-
 window = turtle.Screen()
 
 B = 700
@@ -11,7 +10,7 @@ Y = 136
 ODSTĘP = 136
 
 win = window.setup(700,700)
-window.title('Gra z zapałkami nie pamietam nazwy')
+window.title('Gra')
 window.bgcolor('green yellow')
 turtle.speed(10)
 
@@ -44,6 +43,14 @@ row7 = tablica[6]
 # Funkcja obsługująca kliknięcie na obrazek
 def klikniecie(x, y):
     print("Kliknięto na obrazek w punkcie", x, y)
+    if -56.0 < x < -32.0 and 255.0 < y < 290.0:
+        Ile = 1
+    elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
+        Ile = 2
+    elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
+        Ile = 3
+
+
     if -10.0 < x < 8.0 and 17.0 < y < 90.0:
         tablica[1][3] = None
         turtle.penup()
@@ -161,7 +168,7 @@ def klikniecie(x, y):
             turtle.forward(image_height)
             turtle.right(90)
         turtle.end_fill()
-    elif -100.0 < x < -80.0 and -240.0 < y < -165.0:
+    elif -100.0 < x < -80.0 and -240.0 < y < -165.0: #3gggggggggggggggg
         tablica[4][0] = None
         turtle.penup()
         turtle.goto(-100.0, -165.0)
@@ -312,6 +319,8 @@ draw_number(3, 60, 245)
 turtle.mainloop()
 
 
+
+
 def ruch_komputera():
     kol = random.randint(0, 6)
     rzad = random.randint(0, 6)
@@ -368,4 +377,7 @@ def ruch_komputera():
         turtle.pendown()
         turtle.begin_fill()
         turtle.color("green yellow")
+
+
+
 
