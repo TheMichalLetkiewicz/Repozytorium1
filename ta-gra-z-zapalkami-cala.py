@@ -45,29 +45,45 @@ row7 = tablica[6]
 pierwsza_funkcja_wykonana = False  
 
 
+def Ile(licznik, k):
+    licznik = 0
+    for wiersz in tablica:
+        for element in wiersz:
+            if element == 'I':
+                licznik += 1
+        break
+
+
+
+    licznik2 = 0
+    for wiersz in tablica:
+        for element in wiersz:
+            if element == 'I':
+                licznik2 += 1
+    roznica = licznik - licznik2
+    print(roznica)
+    if k == roznica:
+        ruch_komputera()
+
+
 def ruch_gracza(x, y):
     global pierwsza_funkcja_wykonana
     pierwsza_funkcja_wykonana = False
     print("Kliknięto na obrazek w punkcie", x, y)
     if -56.0 < x < -32.0 and 255.0 < y < 290.0:
         pierwsza_funkcja_wykonana = True
-        Ile(x,y,1)
+        Ile(0, 1)
     elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
         pierwsza_funkcja_wykonana = True
-        Ile(x,y,2)
+        Ile(0, 2)
     elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
         pierwsza_funkcja_wykonana = True
-        Ile(x,y,3)
+        Ile(0, 3)
 
 
-def Ile(x, y, k):
-    roznica = 0
-    licznik = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik += 1
 
+
+def klikniecie(x,y):
     if pierwsza_funkcja_wykonana == True:
         if -10.0 < x < 8.0 and 17.0 < y < 90.0:
                 tablica[1][3] = None
@@ -277,16 +293,9 @@ def Ile(x, y, k):
                     turtle.forward(image_height)
                     turtle.right(90)
                 turtle.end_fill()
+    
 
-    licznik2 = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik2 += 1
-    roznica = licznik - licznik2
-    print(roznica)
-    if k == roznica:
-        ruch_komputera()
+   
      
 
 
@@ -445,10 +454,6 @@ def ruch_komputera():
         turtle.begin_fill()
         turtle.color("green yellow")
     ruch_gracza()
-
-
-
-
 
 
 
