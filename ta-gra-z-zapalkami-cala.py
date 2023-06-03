@@ -38,228 +38,232 @@ row7 = tablica[6]
 
 
 
-
-
+'''
 # Funkcja obsługująca kliknięcie na obrazek
-def klikniecie(x, y):
+def klik(x, y):
     print("Kliknięto na obrazek w punkcie", x, y)
     if -56.0 < x < -32.0 and 255.0 < y < 290.0:
-        Ile = 1
+       ruch_gracza(1)
     elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
-        Ile = 2
+        ruch_gracza(2)
     elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
-        Ile = 3
+        ruch_gracza(3)
+'''
+def klikniecie(x,y):
+              
 
+        if -10.0 < x < 8.0 and 17.0 < y < 90.0:
+            tablica[1][3] = None
+            turtle.penup()
+            turtle.goto(-10.0, 90.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -40.0 < x < -20.0 and -70 < y < 5.0:
+            tablica[2][2] = None
+            turtle.penup()
+            turtle.goto(-40.0, 5.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -10.0 < x < 10.0 and -70 < y < 5.0:
+            tablica[2][3] = None
+            turtle.penup()
+            turtle.goto(-10.0, 5.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif 20.0 < x < 40.0 and -70 < y < 5.0:
+            tablica[2][4] = None
+            turtle.penup()
+            turtle.goto(20.0, 5.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()                                                                                            #to pewnie można było zrobić krócej
+        elif -70.0 < x < -50.0 and -155.0 < y < -80.0:
+            tablica[3][1] = None
+            turtle.penup()
+            turtle.goto(-70.0, -80.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -40.0 < x < -20.0 and -155.0 < y < -80.0:
+            tablica[3][2] = None
+            turtle.penup()
+            turtle.goto(-40.0, -80.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -10.0 < x < 10.0 and -155.0 < y < -80.0:
+            tablica[3][3] = None
+            turtle.penup()
+            turtle.goto(-10.0, -80.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif 20.0 < x < 40.0 and -155.0 < y < -80.0:
+            tablica[3][4] = None
+            turtle.penup()
+            turtle.goto(20.0, -80.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif 50.0 < x < 70.0 and -155.0 < y < -80.0:
+            tablica[3][5] = None
+            turtle.penup()
+            turtle.goto(50.0, -80.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -100.0 < x < -80.0 and -240.0 < y < -165.0: #3gggggggggggggggg
+            tablica[4][0] = None
+            turtle.penup()
+            turtle.goto(-100.0, -165.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -70.0 < x < -50.0 and -240.0 < y < -165.0:
+            tablica[4][1] = None
+            turtle.penup()
+            turtle.goto(-70.0, -165.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -40.0 < x < -20.0 and -240.0 < y < -165.0:
+            tablica[4][2] = None
+            turtle.penup()
+            turtle.goto(-40.0, -165.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif -10.0 < x < 10.0 and -240.0 < y < -165.0:
+            tablica[4][3] = None
+            turtle.penup()
+            turtle.goto(-10.0, -165.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif 20.0 < x < 40.0 and -240.0 < y < -165.0:
+            tablica[4][4] = None
+            turtle.penup()
+            turtle.goto(20.0, -165.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif 50.0 < x < 70.0 and -240.0 < y < -165.0:
+            tablica[4][5] = None
+            turtle.penup()
+            turtle.goto(50.0, -165.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
+        elif 80.0 < x < 100.0 and -240.0 < y < -165.0:
+            tablica[4][6] = None
+            turtle.penup()
+            turtle.goto(80.0, -165.0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            for _ in range(2):
+                turtle.forward(image_width)
+                turtle.right(90)
+                turtle.forward(image_height)
+                turtle.right(90)
+            turtle.end_fill()
 
-    if -10.0 < x < 8.0 and 17.0 < y < 90.0:
-        tablica[1][3] = None
-        turtle.penup()
-        turtle.goto(-10.0, 90.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -40.0 < x < -20.0 and -70 < y < 5.0:
-        tablica[2][2] = None
-        turtle.penup()
-        turtle.goto(-40.0, 5.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -10.0 < x < 10.0 and -70 < y < 5.0:
-        tablica[2][3] = None
-        turtle.penup()
-        turtle.goto(-10.0, 5.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif 20.0 < x < 40.0 and -70 < y < 5.0:
-        tablica[2][4] = None
-        turtle.penup()
-        turtle.goto(20.0, 5.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()                                                                                            #to pewnie można było zrobić krócej
-    elif -70.0 < x < -50.0 and -155.0 < y < -80.0:
-        tablica[3][1] = None
-        turtle.penup()
-        turtle.goto(-70.0, -80.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -40.0 < x < -20.0 and -155.0 < y < -80.0:
-        tablica[3][2] = None
-        turtle.penup()
-        turtle.goto(-40.0, -80.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -10.0 < x < 10.0 and -155.0 < y < -80.0:
-        tablica[3][3] = None
-        turtle.penup()
-        turtle.goto(-10.0, -80.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif 20.0 < x < 40.0 and -155.0 < y < -80.0:
-        tablica[3][4] = None
-        turtle.penup()
-        turtle.goto(20.0, -80.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif 50.0 < x < 70.0 and -155.0 < y < -80.0:
-        tablica[3][5] = None
-        turtle.penup()
-        turtle.goto(50.0, -80.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -100.0 < x < -80.0 and -240.0 < y < -165.0: #3gggggggggggggggg
-        tablica[4][0] = None
-        turtle.penup()
-        turtle.goto(-100.0, -165.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -70.0 < x < -50.0 and -240.0 < y < -165.0:
-        tablica[4][1] = None
-        turtle.penup()
-        turtle.goto(-70.0, -165.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -40.0 < x < -20.0 and -240.0 < y < -165.0:
-        tablica[4][2] = None
-        turtle.penup()
-        turtle.goto(-40.0, -165.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif -10.0 < x < 10.0 and -240.0 < y < -165.0:
-        tablica[4][3] = None
-        turtle.penup()
-        turtle.goto(-10.0, -165.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif 20.0 < x < 40.0 and -240.0 < y < -165.0:
-        tablica[4][4] = None
-        turtle.penup()
-        turtle.goto(20.0, -165.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif 50.0 < x < 70.0 and -240.0 < y < -165.0:
-        tablica[4][5] = None
-        turtle.penup()
-        turtle.goto(50.0, -165.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    elif 80.0 < x < 100.0 and -240.0 < y < -165.0:
-        tablica[4][6] = None
-        turtle.penup()
-        turtle.goto(80.0, -165.0)
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        for _ in range(2):
-            turtle.forward(image_width)
-            turtle.right(90)
-            turtle.forward(image_height)
-            turtle.right(90)
-        turtle.end_fill()
-    
+      
+
+        
     
     
 
@@ -302,7 +306,9 @@ for row_index, row in enumerate(tablica):
             draw_image(image_x, image_y)
 
             # Dodanie obsługi kliknięcia na obrazek
-            turtle.onscreenclick(klikniecie, 1)
+            
+            turtle.onscreenclick(klikniecie,1)
+            
 
 # Rysowanie liczby w prawym górnym rogu
 def draw_number(number, x, y):
@@ -377,6 +383,19 @@ def ruch_komputera():
         turtle.pendown()
         turtle.begin_fill()
         turtle.color("green yellow")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
