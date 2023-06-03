@@ -312,4 +312,29 @@ draw_number(3, 60, 245)
 turtle.mainloop()
 
 
+def ruch_komputera():
+    kol = random.randint(0, 6)
+    rzad = random.randint(0, 6)
+    ile = random.randint(1, 3)
+    g = random.randint(-1,1,2)
+    if ile == 1:
+        while tablica[kol][rzad] == None:
+            rzad = random.randint(0, 6)
+            kol = random.randint(0, 6)
+        tablica[kol][rzad] = None
+    elif ile == 2:
+        
+        while tablica[kol][rzad] == None:
+            rzad = random.randint(0, 6)
+            kol = random.randint(0, 6)
+        tablica[kol][rzad] = None
+        tablica[kol][rzad+g] = None
+    elif ile == 3:
+        for i in range(ile):
+            while tablica[kol][rzad] == None:
+                rzad = random.randint(0, 6)
+                kol = random.randint(0, 6)
+            tablica[kol][rzad] = None
+            tablica[kol][rzad+g] = None
+            tablica[kol][rzad+g+g] = None
 
