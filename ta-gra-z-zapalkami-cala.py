@@ -34,46 +34,18 @@ row7 = tablica[6]
             
 
 
-pierwsza_funkcja_wykonana = False
 
 
 
-def ruch_gracza(x, y):
+
+#def ruch_gracza(x, y):
     
-    global pierwsza_funkcja_wykonana
-    pierwsza_funkcja_wykonana = False
-    print("Kliknięto na obrazek w punkcie", x, y)
-    if -56.0 < x < -32.0 and 255.0 < y < 290.0:
-        pierwsza_funkcja_wykonana = True
-        Ile(0, 1)
-    elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
-        pierwsza_funkcja_wykonana = True
-        Ile(0, 2)
-    elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
-        pierwsza_funkcja_wykonana = True
-        Ile(0, 3)
-    ruch_gracza(x,y)
+    #global pierwsza_funkcja_wykonana
+    
+    
 
 
-def Ile(licznik, k):
-    licznik = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik += 1
-        break
 
-    klikniecie(any,any)
-
-    licznik2 = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik2 += 1
-    roznica = licznik - licznik2
-    print(roznica)
-    if k == roznica:
-        ruch_komputera()
 
 
 
@@ -81,9 +53,35 @@ def Ile(licznik, k):
 
 
 def klikniecie(x,y):
+    
     global pierwsza_funkcja_wykonana
-    if pierwsza_funkcja_wykonana == True:
-        if -10.0 < x < 8.0 and 17.0 < y < 90.0:
+    global druga_funkcja
+    druga_funkcja = False
+    if druga_funkcja == False:
+        pierwsza_funkcja_wykonana = False
+        print("Kliknięto na obrazek w punkcie", x, y)
+        if -56.0 < x < -32.0 and 255.0 < y < 290.0:
+            pierwsza_funkcja_wykonana = True
+            #Ile(0, 1)
+            druga_funkcja = True
+        elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
+            pierwsza_funkcja_wykonana = True
+            #Ile(0, 2)
+            druga_funkcja = True
+        elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
+            pierwsza_funkcja_wykonana = True
+            #Ile(0, 3)
+            druga_funkcja = True
+    
+    
+    
+
+    if pierwsza_funkcja_wykonana == True and druga_funkcja == True:
+        print("djgsdgaaghjsjghas")
+        druga_funkcja = True
+
+        if -10.0 < x < 10.0 and 17.0 < y < 90.0:
+                print("ussuususuus")
                 tablica[1][3] = None
                 turtle.penup()
                 turtle.goto(-10.0, 90.0)
@@ -296,18 +294,50 @@ def klikniecie(x,y):
    
      
 
+'''
+def Ile(licznik, k):
+    licznik = 0
+    for wiersz in tablica:
+        for element in wiersz:
+            if element == 'I':
+                licznik += 1
+        
 
+    klikniecie(x=any,y=any)
+
+    licznik2 = 0
+    for wiersz in tablica:
+        for element in wiersz:
+            if element == 'I':
+                licznik2 += 1
+    roznica = licznik2 - licznik
+    print(roznica)
+    if k == roznica:
+        ruch_komputera(0,0,0,0)
 
 
     
                 
 
-
+def ruch_gracza(x, y):
+    
+    global pierwsza_funkcja_wykonana
+    pierwsza_funkcja_wykonana = False
+    print("Kliknięto na obrazek w punkcie", x, y)
+    if -56.0 < x < -32.0 and 255.0 < y < 290.0:
+        pierwsza_funkcja_wykonana = True
+        Ile(0, 1)
+    elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
+        pierwsza_funkcja_wykonana = True
+        Ile(0, 2)
+    elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
+        pierwsza_funkcja_wykonana = True
+        Ile(0, 3)
 
 
 
                 
-    
+    '''
 
     
 
@@ -374,8 +404,8 @@ for row_index, row in enumerate(tablica):
 
             # Dodanie obsługi kliknięcia na obrazek
             
-            turtle.onscreenclick(ruch_gracza,1)
-            turtle.onscreenclick(Ile,1)
+            #turtle.onscreenclick(ruch_gracza,1)
+            turtle.onscreenclick(klikniecie,1)
             
 
 # Rysowanie liczby w prawym górnym rogu
@@ -444,9 +474,9 @@ def ruch_komputera(kol, rzad, ile, g):
             turtle.pendown()
             turtle.begin_fill()
             turtle.color("green yellow")
-            tablica[kol][rzad + g + g] = None
+            tablica[kol][rzad - g] = None
             turtle.penup()
-            turtle.goto(-70.0 + 30.0 * (rzad + g + g - 1), 90.0 - 85 * (kol - 1))
+            turtle.goto(-70.0 + 30.0 * (rzad - g - 1), 90.0 - 85 * (kol - 1))
             turtle.pendown()
             turtle.begin_fill()
             turtle.color("green yellow")
