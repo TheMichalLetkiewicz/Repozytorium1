@@ -81,7 +81,6 @@ def klikniecie(x,y):
         druga_funkcja = True
 
         if -10.0 < x < 10.0 and 17.0 < y < 90.0:
-                print("ussuususuus")
                 tablica[1][3] = None
                 turtle.penup()
                 turtle.goto(-10.0, 90.0)
@@ -480,9 +479,3 @@ def ruch_komputera(kol, rzad, ile, g):
             turtle.pendown()
             turtle.begin_fill()
             turtle.color("green yellow")
-
-
-
-
-
-
