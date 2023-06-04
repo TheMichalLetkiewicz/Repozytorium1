@@ -2,13 +2,6 @@ import turtle
 import random
 
 window = turtle.Screen()
-
-B = 700
-X = - 135
-Y = 136
-
-ODSTĘP = 136
-
 win = window.setup(700,700)
 window.title('Gra')
 window.bgcolor('green yellow')
@@ -26,8 +19,6 @@ tablica = [
 ]
 
 
-
-
 row1 = tablica[0]
 row2 = tablica[1]
 row3 = tablica[2]
@@ -41,32 +32,14 @@ row7 = tablica[6]
 
 
             
-    
-pierwsza_funkcja_wykonana = False  
 
 
-def Ile(licznik, k):
-    licznik = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik += 1
-        break
+pierwsza_funkcja_wykonana = False
 
-
-
-    licznik2 = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik2 += 1
-    roznica = licznik - licznik2
-    print(roznica)
-    if k == roznica:
-        ruch_komputera()
 
 
 def ruch_gracza(x, y):
+    
     global pierwsza_funkcja_wykonana
     pierwsza_funkcja_wykonana = False
     print("Kliknięto na obrazek w punkcie", x, y)
@@ -79,11 +52,36 @@ def ruch_gracza(x, y):
     elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
         pierwsza_funkcja_wykonana = True
         Ile(0, 3)
+    ruch_gracza(x,y)
+
+
+def Ile(licznik, k):
+    licznik = 0
+    for wiersz in tablica:
+        for element in wiersz:
+            if element == 'I':
+                licznik += 1
+        break
+
+    klikniecie(any,any)
+
+    licznik2 = 0
+    for wiersz in tablica:
+        for element in wiersz:
+            if element == 'I':
+                licznik2 += 1
+    roznica = licznik - licznik2
+    print(roznica)
+    if k == roznica:
+        ruch_komputera()
+
+
 
 
 
 
 def klikniecie(x,y):
+    global pierwsza_funkcja_wykonana
     if pierwsza_funkcja_wykonana == True:
         if -10.0 < x < 8.0 and 17.0 < y < 90.0:
                 tablica[1][3] = None
@@ -397,64 +395,61 @@ turtle.mainloop()
 
 
 
-def ruch_komputera():
-    kol = random.randint(0, 6)
-    rzad = random.randint(0, 6)
-    ile = random.randint(1, 3)
-    g = random.randint(-1,1,2)
-    if ile == 1:
-
-        while tablica[kol][rzad] == None:
-            rzad = random.randint(0, 6)
-            kol = random.randint(0, 6)
-        tablica[kol][rzad] = None
-        turtle.penup()
-        turtle.goto(-70.0+30.0*(rzad-1), 90.0-85*(kol-1))
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-    elif ile == 2:
-        
-        while tablica[kol][rzad] == None:
-            rzad = random.randint(0, 6)
-            kol = random.randint(0, 6)
-        tablica[kol][rzad] = None
-        turtle.penup()
-        turtle.goto(-70.0+30.0*(rzad-1), 90.0-85*(kol-1))
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        tablica[kol][rzad+g] = None
-        turtle.penup()
-        turtle.goto(-70.0+30.0*(rzad+g-1), 90.0-85*(kol-1))
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-    elif ile == 3:
-        
-        while tablica[kol][rzad] == None:
-            rzad = random.randint(0, 6)
-            kol = random.randint(0, 6)
-        tablica[kol][rzad] = None
-        turtle.penup()
-        turtle.goto(-70.0+30.0*(rzad-1), 90.0-85*(kol-1))
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")    
-        tablica[kol][rzad+g] = None
-        turtle.penup()
-        turtle.goto(-70.0+30.0*(rzad+g-1), 90.0-85*(kol-1))
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-        tablica[kol][rzad+g+g] = None
-        turtle.penup()
-        turtle.goto(-70.0+30.0*(rzad+g+g-1), 90.0-85*(kol-1))
-        turtle.pendown()
-        turtle.begin_fill()
-        turtle.color("green yellow")
-    ruch_gracza()
-
+def ruch_komputera(kol, rzad, ile, g):
+    
+        print("Ruch komputera")
+        kol = random.randint(0, 6)
+        rzad = random.randint(0, 6)
+        ile = random.randint(1, 3)
+        g = random.choice([-1, 1])
+        if ile == 1:
+            while tablica[kol][rzad] == None:
+                rzad = random.randint(0, 6)
+                kol = random.randint(0, 6)
+            tablica[kol][rzad] = None
+            turtle.penup()
+            turtle.goto(-70.0 + 30.0 * (rzad - 1), 90.0 - 85 * (kol - 1))
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+        elif ile == 2:
+            while tablica[kol][rzad] == None:
+                rzad = random.randint(0, 6)
+                kol = random.randint(0, 6)
+            tablica[kol][rzad] = None
+            turtle.penup()
+            turtle.goto(-70.0 + 30.0 * (rzad - 1), 90.0 - 85 * (kol - 1))
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            tablica[kol][rzad + g] = None
+            turtle.penup()
+            turtle.goto(-70.0 + 30.0 * (rzad + g - 1), 90.0 - 85 * (kol - 1))
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+        elif ile == 3:
+            while tablica[kol][rzad] == None:
+                rzad = random.randint(0, 6)
+                kol = random.randint(0, 6)
+            tablica[kol][rzad] = None
+            turtle.penup()
+            turtle.goto(-70.0 + 30.0 * (rzad - 1), 90.0 - 85 * (kol - 1))
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            tablica[kol][rzad + g] = None
+            turtle.penup()
+            turtle.goto(-70.0 + 30.0 * (rzad + g - 1), 90.0 - 85 * (kol - 1))
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
+            tablica[kol][rzad + g + g] = None
+            turtle.penup()
+            turtle.goto(-70.0 + 30.0 * (rzad + g + g - 1), 90.0 - 85 * (kol - 1))
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.color("green yellow")
 
 
 
