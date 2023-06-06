@@ -34,24 +34,6 @@ row7 = tablica[6]
             
 
 
-
-
-
-
-#def ruch_gracza(x, y):
-    
-    #global pierwsza_funkcja_wykonana
-    
-    
-
-
-
-
-
-
-
-
-
 def klikniecie(x,y):
     
     global pierwsza_funkcja_wykonana
@@ -62,15 +44,15 @@ def klikniecie(x,y):
         print("Kliknięto na obrazek w punkcie", x, y)
         if -56.0 < x < -32.0 and 255.0 < y < 290.0:
             pierwsza_funkcja_wykonana = True
-            #Ile(0, 1)
+            
             druga_funkcja = True
         elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
             pierwsza_funkcja_wykonana = True
-            #Ile(0, 2)
+            
             druga_funkcja = True
         elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
             pierwsza_funkcja_wykonana = True
-            #Ile(0, 3)
+            
             druga_funkcja = True
     
     
@@ -293,50 +275,8 @@ def klikniecie(x,y):
    
      
 
-'''
-def Ile(licznik, k):
-    licznik = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik += 1
-        
-
-    klikniecie(x=any,y=any)
-
-    licznik2 = 0
-    for wiersz in tablica:
-        for element in wiersz:
-            if element == 'I':
-                licznik2 += 1
-    roznica = licznik2 - licznik
-    print(roznica)
-    if k == roznica:
-        ruch_komputera(0,0,0,0)
-
-
+  
     
-                
-
-def ruch_gracza(x, y):
-    
-    global pierwsza_funkcja_wykonana
-    pierwsza_funkcja_wykonana = False
-    print("Kliknięto na obrazek w punkcie", x, y)
-    if -56.0 < x < -32.0 and 255.0 < y < 290.0:
-        pierwsza_funkcja_wykonana = True
-        Ile(0, 1)
-    elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
-        pierwsza_funkcja_wykonana = True
-        Ile(0, 2)
-    elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
-        pierwsza_funkcja_wykonana = True
-        Ile(0, 3)
-
-
-
-                
-    '''
 
     
 
@@ -371,13 +311,13 @@ def ruch_gracza(x, y):
 
 
 
-# Ustawienia rozmiaru i położenia obrazka
+
 image_width = 20
 image_height = 75
 image_x_offset = -100
 image_y_offset = 175
 
-# Rysowanie prostokąta jako zastępcowego obrazka
+
 def draw_image(image_x, image_y):
     turtle.penup()
     turtle.goto(image_x, image_y)
@@ -390,35 +330,26 @@ def draw_image(image_x, image_y):
         turtle.right(90)
     turtle.end_fill()
 
-# Iteracja po tablicy i rysowanie obrazków
+
 for row_index, row in enumerate(tablica):
     for col_index, element in enumerate(row):
         if element == 'I':
-            # Obliczanie współrzędnych obrazka
+            
             image_x = image_x_offset + col_index * (image_width + 10)
             image_y = image_y_offset - row_index * (image_height + 10)
-
-            # Rysowanie zastępcowego obrazka
             draw_image(image_x, image_y)
-
-            # Dodanie obsługi kliknięcia na obrazek
-            
-            #turtle.onscreenclick(ruch_gracza,1)
             turtle.onscreenclick(klikniecie,1)
             
 
-# Rysowanie liczby w prawym górnym rogu
 def draw_number(number, x, y):
     turtle.penup()
     turtle.goto(x, y)
     turtle.write(number, align="right", font=("Arial", 33, "normal"))
 
-# Umieszczenie liczb 1, 2, 3 w prawym górnym rogu
 draw_number(1, -30, 245)
 draw_number(2, 15, 245)
 draw_number(3, 60, 245)
 
-# Uruchomienie pętli głównej turtle
 turtle.mainloop()
 
 
@@ -479,3 +410,11 @@ def ruch_komputera(kol, rzad, ile, g):
             turtle.pendown()
             turtle.begin_fill()
             turtle.color("green yellow")
+
+    
+
+
+
+
+
+
