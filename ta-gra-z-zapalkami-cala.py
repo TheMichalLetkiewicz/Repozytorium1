@@ -7,7 +7,7 @@ window.title('Gra')
 window.bgcolor('green yellow')
 turtle.speed(10)
 
-
+#utworzenie tablicy znaków
 tablica = [
     [None, None, None, None, None, None, None],
     [None, None, None, 'I', None, None, None],
@@ -18,7 +18,6 @@ tablica = [
     [None, None, None, None, None, None, None]
 ]
 
-
 row1 = tablica[0]
 row2 = tablica[1]
 row3 = tablica[2]
@@ -27,41 +26,36 @@ row5 = tablica[4]
 row6 = tablica[5]
 row7 = tablica[6]
 
+licznik = 0
+for wiersz in tablica:
+    for element in wiersz:
+        if element is not None:
+            licznik += 1
+
+print("Liczba elementów w tablicy: ", licznik)
 
 
-
-
-            
-
-
-def klikniecie(x,y):
-    
-    global pierwsza_funkcja_wykonana
-    global druga_funkcja
-    druga_funkcja = False
-    if druga_funkcja == False:
+def klikniecie_1(x,y):
+       
+                    
+        global pierwsza_funkcja_wykonana
         pierwsza_funkcja_wykonana = False
         print("Kliknięto na obrazek w punkcie", x, y)
         if -56.0 < x < -32.0 and 255.0 < y < 290.0:
             pierwsza_funkcja_wykonana = True
-            
-            druga_funkcja = True
+            turtle.onscreenclick(klikniecie_2, 1)
         elif -16.0 < x < 16.0 and 255.0 < y < 290.0:
             pierwsza_funkcja_wykonana = True
-            
-            druga_funkcja = True
+            turtle.onscreenclick(klikniecie_2, 1)
+                
         elif 32.0 < x < 56.0 and 255.0 < y < 290.0:
             pierwsza_funkcja_wykonana = True
-            
-            druga_funkcja = True
+            turtle.onscreenclick(klikniecie_2, 1)
+        
     
     
-    
-
-    if pierwsza_funkcja_wykonana == True and druga_funkcja == True:
-        print("djgsdgaaghjsjghas")
-        druga_funkcja = True
-
+def klikniecie_2(x, y):
+        print(tablica[1][3])
         if -10.0 < x < 10.0 and 17.0 < y < 90.0:
                 tablica[1][3] = None
                 turtle.penup()
@@ -270,46 +264,8 @@ def klikniecie(x,y):
                     turtle.forward(image_height)
                     turtle.right(90)
                 turtle.end_fill()
-    
 
-   
-     
-
-  
-    
-
-    
-
-    
-    
-
-
-
-
-
-
-
-       
-
-
-
-
-
-
-
-      
-
-        
-    
-    
-
-
-
-
-
-
-
-
+        turtle.onscreenclick(klikniecie_1, 1)
 
 
 image_width = 20
@@ -337,23 +293,23 @@ for row_index, row in enumerate(tablica):
             
             image_x = image_x_offset + col_index * (image_width + 10)
             image_y = image_y_offset - row_index * (image_height + 10)
-            draw_image(image_x, image_y)
-            turtle.onscreenclick(klikniecie,1)
+
             
+            draw_image(image_x, image_y)
+            turtle.onscreenclick(klikniecie_1,1)
+            
+
 
 def draw_number(number, x, y):
     turtle.penup()
     turtle.goto(x, y)
     turtle.write(number, align="right", font=("Arial", 33, "normal"))
 
+
 draw_number(1, -30, 245)
 draw_number(2, 15, 245)
 draw_number(3, 60, 245)
-
 turtle.mainloop()
-
-
-
 
 def ruch_komputera(kol, rzad, ile, g):
     
@@ -410,11 +366,3 @@ def ruch_komputera(kol, rzad, ile, g):
             turtle.pendown()
             turtle.begin_fill()
             turtle.color("green yellow")
-
-    
-
-
-
-
-
-
